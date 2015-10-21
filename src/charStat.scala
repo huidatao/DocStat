@@ -3,7 +3,7 @@
 object charStat extends App{
   import scala.io.Source
   import scala.collection.mutable.LinkedHashMap
-  val source = Source.fromFile("resource/doc.txt")
+  val source = Source.fromFile("resource/a.txt")
   val hm = LinkedHashMap[Char,Int]()       
   val iter = source.buffered
   
@@ -14,14 +14,15 @@ object charStat extends App{
         .map(word => word.filter(Character.isLetter(_)))
         .sorted
   
-  var str = tokens(1)
-  for(i <- 2 to tokens.length -1){
+  var str = tokens(0)
+  for(i <- 0 to tokens.length -1){
     str = str + tokens(i)
+
   }
   
   val charArray = str.toList
   val sortedArray = charArray.sorted
-  for(i <- 1 to sortedArray.length - 1){
+  for(i <- 0 to sortedArray.length - 1){
     val char = sortedArray(i)
      if(!hm.contains(char)) {hm.put(char, 1)}
     else {
@@ -30,6 +31,7 @@ object charStat extends App{
       hm.put(char, temp)
     }
   }
+
   
   //Iterator遍历，输出字母统计结果
   val mapIter = hm.iterator

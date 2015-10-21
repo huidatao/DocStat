@@ -3,8 +3,8 @@
 object WordStat extends App{
   import scala.io.Source
   import scala.collection.mutable.LinkedHashMap
-  val source = Source.fromFile("resource/a.txt")
-  val hm = LinkedHashMap[String,Int]()
+  val source = Source.fromFile("resource/doc.txt")
+  val hm = List[String]()
   
   //过滤，删去file中的符号
   val fileString = source.mkString.replaceAll("\n", " ");
@@ -14,7 +14,7 @@ object WordStat extends App{
         .map(word => word.filter(Character.isLetter(_)))
         .sorted
 
-  for (i <- 0 to tokens.length - 1) {
+  for (i <- 1 to tokens.length - 1) {
     val str = tokens(i)
     if (str.length() != 0) {
       if (!hm.contains(str)) {
