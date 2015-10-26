@@ -6,7 +6,7 @@ object WordStat extends App{
   val source = Source.fromFile("resource/doc.txt")
   val hm = List[String]()
   
-  //过滤，删去file中的符号
+    //filter non-character symbol 
   val fileString = source.mkString.replaceAll("\n", " ");
   val tokens = fileString.split(" ")
         .map (_.trim())

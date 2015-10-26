@@ -33,7 +33,7 @@ object charStat extends App{
   }
 
   
-  //Iterator遍历，输出字母统计结果
+  //Tranverse the hashmap and output caculated result
   val mapIter = hm.iterator
   while(mapIter.hasNext){
     print(mapIter.next)
